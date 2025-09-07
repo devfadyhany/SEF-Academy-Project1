@@ -1,0 +1,850 @@
+/* 
+  primary: #1a2a6c;
+  secondary: #7087e3;
+  backgrounds: white;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* ====================================== General Styles ====================================== */
+
+.underline-effect {
+  position: relative;
+}
+
+.underline-effect::after {
+  position: absolute;
+  content: "";
+
+  bottom: -4px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #7087e3;
+}
+
+.underline-effect:hover:after {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.container {
+  width: 80%;
+  padding: 64px 0;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 40px;
+  text-transform: capitalize;
+}
+
+.section-title .title-line {
+  width: 90px;
+  height: 4px;
+  margin: auto;
+  margin-bottom: 32px;
+  background-color: #7087e3;
+  margin-top: 8px;
+}
+
+.cards-container {
+  overflow: auto;
+}
+
+.mid-card {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.card {
+  width: 30%;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+
+.card-bordered {
+  padding: 64px 16px;
+  border: 1px solid #1a2a6c;
+  border-radius: 8px;
+  margin-top: 32px;
+}
+
+.corner-effect::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: #96a5de;
+  border-radius: 8px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.corner-effect:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.top-effect::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: #7087e3;
+  border-radius: 8px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.top-effect:hover::after {
+  height: 100%;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+/* ====================================== Header Section ====================================== */
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #1a2a6c;
+  position: fixed;
+  top: 0;
+  padding: 0 25px;
+  z-index: 5;
+}
+
+.header-logo {
+  font-size: 24px;
+  color: white;
+  float: left;
+  padding-top: 12px;
+  margin-right: 25px;
+}
+
+.header-search {
+  background-color: white;
+  width: 235px;
+  height: 32px;
+  border-radius: 16px;
+  float: left;
+  margin-top: 8px;
+  position: relative;
+}
+
+.header-search input {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  padding-left: 32px;
+  border: none;
+}
+
+.header-search i {
+  position: absolute;
+  top: 50%;
+  left: 8;
+  transform: translate(0, -50%);
+}
+
+.header-links {
+  float: right;
+  margin-top: 14px;
+}
+
+.header-links li {
+  display: inline-block;
+  margin-left: 32px;
+}
+
+.header-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-links .active {
+  position: relative;
+}
+
+.header-links .active::after {
+  position: absolute;
+  content: "";
+
+  bottom: -4px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: #7087e3;
+}
+
+.header-blog-menu {
+  visibility: hidden;
+  width: 150px;
+  background-color: white;
+  padding: 0 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  z-index: 4;
+}
+
+.header-blog-menu li {
+  display: block;
+  margin: 28px 0;
+}
+
+.header-blog-menu li a {
+  color: black;
+}
+
+.header-menu-container {
+  position: relative;
+  height: 100%;
+}
+
+.header-menu-container:hover .header-blog-menu {
+  visibility: visible;
+}
+
+/* ====================================== Hero Section ====================================== */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/Hero.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-title {
+  color: white;
+  font-size: 96px;
+  text-transform: uppercase;
+}
+
+.hero-desc {
+  color: lightgray;
+  font-size: 16px;
+  margin: 16px 0px 32px 0;
+  letter-spacing: 3px;
+}
+
+.hero-btn {
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.hero-btn2 {
+  background-color: #1a2a6c;
+  color: white;
+}
+
+.hero-btn:hover {
+  opacity: 0.7;
+}
+
+/* ====================================== About Section ====================================== */
+
+.about-card-icon,
+.services1-card-icon {
+  color: #2941a4;
+  font-size: 32px;
+}
+
+.about-card-title,
+.services1-card-title,
+.news-card-title {
+  font-size: 24px;
+  margin: 16px 0;
+  text-transform: capitalize;
+}
+
+.about-card:hover .about-card-title {
+  color: white;
+  transition: 0.5s;
+}
+
+.about-card-desc,
+.services1-card-desc,
+.news-card-desc {
+  color: gray;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+}
+
+.about-card:hover .about-card-desc {
+  color: black;
+  transition: 0.5s;
+}
+
+.about-card-btn,
+.news-card-btn {
+  text-decoration: none;
+  color: #2941a4;
+}
+
+/* ====================================== portfolio Section ====================================== */
+
+.portfolio {
+  width: 100%;
+  padding: 64px 10%;
+  background-color: rgb(232, 234, 248);
+}
+
+.portfolio-card {
+  height: 30%;
+  margin-top: 5%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.portfolio-card img {
+  height: 100%;
+}
+
+.portfolio-card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 32px 0;
+  visibility: hidden;
+}
+
+.portfolio-card-info h3 {
+  color: #173fdd;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+.portfolio-card-info p {
+  margin: 32px 0;
+  color: white;
+}
+
+.portfolio-card-info .icons a i {
+  width: 40px;
+  height: 30px;
+  padding: 6px;
+  background-color: #fff;
+  text-align: center;
+  color: rgb(131, 131, 133);
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.portfolio-card-info .icons a i:hover {
+  color: #173fdd;
+}
+
+.portfolio-card:hover .portfolio-card-info {
+  visibility: visible;
+}
+
+/* ====================================== services1 Section ====================================== */
+
+.services1-card {
+  position: relative;
+  padding: 0;
+  text-align: left;
+}
+
+.services1-card-content {
+  padding-left: 72px;
+  padding-right: 16px;
+}
+
+.services1-card-icon {
+  position: absolute;
+  top: 25%;
+  left: 16;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.services1-card:hover .services1-card-title,
+.services1-card:hover .services1-card-icon {
+  color: #173fdd;
+  transition: 0.5s;
+}
+
+.services1-card:hover .services1-card-desc {
+  color: black;
+  transition: 0.5s;
+}
+
+/* ====================================== services2 Section ====================================== */
+
+.services2 {
+  position: relative;
+  overflow: auto;
+}
+
+.services2-content {
+  width: 50%;
+  float: left;
+}
+
+.services2-content .section-title {
+  text-align: left;
+}
+
+.services2-content .section-title .title-line {
+  margin-left: 0;
+}
+
+.services2-content .section-title .section-desc {
+  color: rgb(170, 170, 170);
+  margin-bottom: 32px;
+}
+
+.services2-list {
+  list-style: none;
+}
+
+.services2-list li {
+  color: gray;
+  margin-bottom: 32px;
+}
+
+.services2-list li i {
+  color: #7087e3;
+}
+
+.services2-image {
+  width: 50%;
+  float: right;
+}
+
+.services2-image-content {
+  width: 350px;
+  margin-left: auto;
+  position: relative;
+}
+
+.services2-image-content img {
+  width: 100%;
+}
+
+.services2-bullets {
+  list-style: none;
+  text-align: center;
+}
+
+.services2-bullets li {
+  background-color: gray;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.services2-bullets .active,
+.services2-bullets li:hover {
+  background-color: #7087e3;
+}
+
+/* ====================================== awards Section ====================================== */
+
+.awards,
+.team1 {
+  width: 100%;
+  height: 400px;
+  background: url(../images/awards.jpg) no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  margin: 64px 0;
+}
+
+.awards-items-container,
+.team1-items-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.awards-items-list,
+.team1-items-list {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  overflow: auto;
+}
+
+.awards-item {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+.awards-item-icon {
+  font-size: 48px;
+  color: #7087e3;
+  margin-bottom: 16px;
+}
+
+.awards-item-count {
+  color: white;
+}
+
+.awards-item-desc {
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* ====================================== prices Section ====================================== */
+
+.price-card {
+  padding: 32px;
+}
+
+.price-card-title {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.price-card:hover .price-card-title {
+  color: #173fdd;
+  transition: 0.5s;
+}
+
+.price-card-tag {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #2941a4;
+  margin: 24px auto;
+  padding: 18px 0;
+}
+
+.price-card:hover .price-card-tag {
+  border: 2px solid #173fdd;
+  transition: 0.5s;
+}
+
+.price-card-tag h3 {
+  font-size: 32px;
+}
+
+.price-card-tag span {
+  text-transform: uppercase;
+}
+
+.price-card-list {
+  list-style: none;
+}
+
+.price-card-list li {
+  text-transform: capitalize;
+  margin-bottom: 24px;
+}
+
+.price-card-btn {
+  width: 150px;
+  height: 30px;
+  border: 2px solid #7087e3;
+  border-radius: 16px;
+  margin-top: 16px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.price-card-btn:hover {
+  background-color: #1a2a6c;
+  color: white;
+}
+
+/* ====================================== team1 Section ====================================== */
+
+.team1 {
+  background-image: url(../images/team.jpg);
+}
+
+.team1-item {
+  width: 50%;
+  padding: 0 64px;
+  float: left;
+}
+
+.team1-item-info {
+  position: relative;
+  text-transform: capitalize;
+  padding-left: 100px;
+  line-height: 1.4;
+}
+
+.team1-item-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.team1-item-info h3 {
+  color: white;
+  font-size: 32px;
+}
+
+.team1-item-info p {
+  color: #173fdd;
+  font-size: 24px;
+}
+
+.team1-item-desc {
+  margin-top: 16px;
+  text-transform: capitalize;
+  line-height: 1.4;
+  color: white;
+}
+
+/* ====================================== team2 Section ====================================== */
+
+.team2 {
+  width: 80%;
+  margin: auto;
+  padding: 64px 0;
+}
+
+.team2-card {
+  width: 30%;
+  float: left;
+  background-color: rgb(223, 221, 221);
+  border-radius: 24px;
+  padding: 16px;
+  position: relative;
+}
+
+.team2-card::after {
+  z-index: 0;
+  border-radius: 24px;
+}
+
+.team2-card:hover::after {
+  opacity: 0.3;
+}
+
+.team2-card-image {
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.team2-card-image img {
+  width: 200px;
+  height: 100%;
+}
+
+.team2-card-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.team2-card-icons a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: #173fdd;
+  margin-left: auto;
+}
+
+.team2-card-icons a:hover {
+  background-color: #1a2a6c;
+}
+
+.team2-card-icons a i {
+  line-height: 40px;
+}
+
+.team2-card:hover .team2-card-icons {
+  visibility: visible;
+}
+
+.team2-card-info h3 {
+  text-transform: capitalize;
+  margin: 16px 0;
+  font-size: 24px;
+}
+
+.team2-card:hover .team2-card-info h3 {
+  color: white;
+}
+
+.team2-card-info p {
+  text-transform: uppercase;
+  color: gray;
+}
+
+.team2-card:hover .team2-card-info p {
+  color: #173fdd;
+}
+
+/* ====================================== news Section ====================================== */
+
+.news-card {
+  padding: 16px;
+}
+
+.news-card:hover::after {
+  opacity: 0.5;
+}
+
+.news-card:hover .news-card-title {
+  color: white;
+  transition: 0.5s;
+}
+
+.news-card:hover .news-card-desc {
+  color: #2941a4;
+  transition: 0.5s;
+}
+
+.news-card img {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  border-radius: 16px;
+}
+
+.news-card-icons {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.news-card-icons li {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.news-card-icons li a {
+  text-decoration: none;
+  color: #173fdd;
+}
+
+/* ====================================== footer Section ====================================== */
+
+.footer {
+  width: 100%;
+  background-color: #dadcf0;
+  padding: 64px 0 16px 0;
+}
+
+.footer-content {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-content img {
+  width: 250px;
+  height: 200px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.footer-icons {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.footer-icons li {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.footer-icons li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2941a4;
+  font-size: 22px;
+}
+
+.footer-icons li a:hover {
+  background-color: #1a2a6c;
+}
+
+.footer-icons li a i {
+  line-height: 50px;
+}
+
+.footer-content p {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 14px;
+}
