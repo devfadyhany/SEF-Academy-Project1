@@ -400,16 +400,20 @@ body {
   position: relative;
   padding: 0;
   text-align: left;
+  height: 230px;
 }
 
 .services1-card-content {
   padding-left: 72px;
   padding-right: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .services1-card-icon {
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 16;
   transform: translateY(-50%);
   z-index: 2;
